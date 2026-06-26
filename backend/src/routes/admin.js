@@ -25,5 +25,8 @@ router.post('/logo', upload.single('logo'), adminController.uploadLogo);
 router.get('/chat', adminController.getChatMessages);
 router.delete('/chat/:id', adminController.deleteChatMessage);
 router.get('/reports', adminController.getReports);
+router.get('/root-files', adminController.getRootFiles);
+router.post('/root-files', adminController.createRootFile);
+router.delete('/root-files/:id', adminController.deleteRootFile);
 
 module.exports = router;

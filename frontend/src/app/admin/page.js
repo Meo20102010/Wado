@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { adminAPI } from '@/lib/api';
 import Link from 'next/link';
-import { HiCube, HiUsers, HiDownload, HiTrendingUp, HiChat, HiTag, HiCog, HiShieldCheck, HiCurrencyDollar } from 'react-icons/hi';
+import { HiCube, HiUsers, HiDownload, HiTrendingUp, HiChat, HiTag, HiCog, HiShieldCheck, HiCurrencyDollar, HiDocumentText } from 'react-icons/hi';
 
 export default function AdminDashboard() {
   const { user } = useAuth();
@@ -49,6 +49,7 @@ export default function AdminDashboard() {
     { icon: HiTag, label: 'Kategori Yönetimi', desc: 'Kategorileri görüntüle, ekle, düzenle', href: '/admin/categories', color: 'from-cyan-500 to-blue-600' },
     { icon: HiTrendingUp, label: 'Reklam Yönetimi', desc: 'Monetag reklamlarını yönet', href: '/admin/ads', color: 'from-amber-500 to-orange-600' },
     { icon: HiChat, label: 'Sohbet Yönetimi', desc: 'Mesajları görüntüle ve yönet', href: '/admin/chat', color: 'from-pink-500 to-rose-600' },
+    { icon: HiDocumentText, label: 'Dosya Yönetimi', desc: 'sw.js, ads.txt, doğrulama dosyaları', href: '/admin/files', color: 'from-violet-500 to-purple-600' },
     { icon: HiCog, label: 'Site Ayarları', desc: 'Logo, tema, site bilgileri', href: '/admin/settings', color: 'from-gray-500 to-slate-600' },
   ];
 

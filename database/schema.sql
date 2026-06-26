@@ -134,6 +134,15 @@ CREATE TABLE IF NOT EXISTS sales (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Root files table (served at site root: sw.js, ads.txt, etc.)
+CREATE TABLE IF NOT EXISTS root_files (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name VARCHAR(100) UNIQUE NOT NULL,
+  content TEXT NOT NULL,
+  content_type VARCHAR(100) DEFAULT 'text/plain',
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_projects_user_id ON projects(user_id);
 CREATE INDEX IF NOT EXISTS idx_projects_category ON projects(category);

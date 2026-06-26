@@ -111,6 +111,9 @@ export const adminAPI = {
   getChatMessages: (params) => api.get('/admin/chat', { params }),
   deleteChatMessage: (id) => api.delete(`/admin/chat/${id}`),
   getReports: () => api.get('/admin/reports'),
+  getRootFiles: () => api.get('/admin/root-files'),
+  createRootFile: (data) => api.post('/admin/root-files', data),
+  deleteRootFile: (id) => api.delete(`/admin/root-files/${id}`),
 };
 
 export const notificationsAPI = {

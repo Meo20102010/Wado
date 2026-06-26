@@ -228,3 +228,38 @@ exports.getReports = async (req, res) => {
     res.status(500).json({ message: 'Sunucu hatası' });
   }
 };
+
+exports.getRootFiles = async (req, res) => {
+  try {
+    const result = await query('SELECT id, name, content, content_type, updated_at FROM root_files ORDER BY name');
+    res.json({ files: result.rows });
+  } catch (error) {
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};
+
+exports.createRootFile = async (req, res) => {
+  try {
+    const { name, content, content_type } = req.body;
+    if (!name || content === undefined) {
+      return res.status(400).json({ message: 'İsim ve içerik gerekli' });
+    }
+    await query(
+      'INSERT INTO root_files (name, content, content_type) VALUES ($1, $2, $3) ON CONFLICT (name) DO UPDATE SET content = $2, content_type = $3, updated_at = CURRENT_TIMESTAMP',
+      [name, content, content_type || 'text/plain']
+    );
+    res.json({ message: 'Dosya kaydedildi' });
+  } catch (error) {
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};
+
+exports.deleteRootFile = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await query('DELETE FROM root_files WHERE id = $1', [id]);
+    res.json({ message: 'Dosya silindi' });
+  } catch (error) {
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};
