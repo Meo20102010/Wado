@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env
+.env.local
+uploads/files/*
+uploads/images/*
+uploads/apk/*
+uploads/exe/*
+!uploads/*/.gitkeep
+*.log
+.DS_Store
