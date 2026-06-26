@@ -10,14 +10,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    methods: ['GET', 'POST'],
-    credentials: true,
-  },
+  origin: process.env.FRONTEND_URL || 'https://oyun-qpkg2j7c0-meos-projects-2ed8ce2c.vercel.app',
+  methods: ['GET', 'POST'],
+  credentials: true,
 });
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'https://oyun-qpkg2j7c0-meos-projects-2ed8ce2c.vercel.app',
   credentials: true,
 }));
 
@@ -52,6 +51,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/root-files', rootFileRoutes);
 app.use('/api/adsense', adsenseRoutes);
+app.use('/admin/api/adsense', adsenseRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });

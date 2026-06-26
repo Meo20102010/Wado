@@ -9,3 +9,5 @@ uploads/exe/*
 !uploads/*/.gitkeep
 *.log
 .DS_Store
+
+.vercel
