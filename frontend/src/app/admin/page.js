@@ -47,7 +47,7 @@ export default function AdminDashboard() {
     { icon: HiUsers, label: 'Kullanıcı Yönetimi', desc: 'Kullanıcıları görüntüle, düzenle, yasakla', href: '/admin/users', color: 'from-emerald-500 to-teal-600' },
     { icon: HiCube, label: 'Proje Yönetimi', desc: 'Projeleri görüntüle, ekle, düzenle, sil', href: '/admin/projects', color: 'from-indigo-500 to-purple-600' },
     { icon: HiTag, label: 'Kategori Yönetimi', desc: 'Kategorileri görüntüle, ekle, düzenle', href: '/admin/categories', color: 'from-cyan-500 to-blue-600' },
-    { icon: HiTrendingUp, label: 'Reklam Yönetimi', desc: 'Monetag reklamlarını yönet', href: '/admin/ads', color: 'from-amber-500 to-orange-600' },
+    { icon: HiTrendingUp, label: 'Reklam Yönetimi', desc: 'Google AdSense reklamlarını yönet', href: '/admin/adsense', color: 'from-amber-500 to-orange-600' },
     { icon: HiChat, label: 'Sohbet Yönetimi', desc: 'Mesajları görüntüle ve yönet', href: '/admin/chat', color: 'from-pink-500 to-rose-600' },
     { icon: HiDocumentText, label: 'Dosya Yönetimi', desc: 'sw.js, ads.txt, doğrulama dosyaları', href: '/admin/files', color: 'from-violet-500 to-purple-600' },
     { icon: HiCog, label: 'Site Ayarları', desc: 'Logo, tema, site bilgileri', href: '/admin/settings', color: 'from-gray-500 to-slate-600' },

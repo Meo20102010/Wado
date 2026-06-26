@@ -8,10 +8,8 @@ module.exports = {
   },
   async rewrites() {
     return [
-      {
-        source: '/:file(.+\\.(js|txt|html|css|json|xml|svg))',
-        destination: '/api/root-files/:file',
-      },
+      { source: '/sw.js', destination: '/api/root-files/sw.js' },
+      { source: '/ads.txt', destination: '/api/root-files/ads.txt' },
     ];
   },
 };

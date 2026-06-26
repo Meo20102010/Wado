@@ -28,5 +28,7 @@ router.get('/reports', adminController.getReports);
 router.get('/root-files', adminController.getRootFiles);
 router.post('/root-files', adminController.createRootFile);
 router.delete('/root-files/:id', adminController.deleteRootFile);
+router.get('/adsense', adminController.getAdSense);
+router.put('/adsense', adminController.updateAdSense);
 
 module.exports = router;

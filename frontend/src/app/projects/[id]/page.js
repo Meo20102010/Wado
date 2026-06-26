@@ -6,6 +6,7 @@ import { useAuth } from '@/context/AuthContext';
 import { projectsAPI } from '@/lib/api';
 import toast from 'react-hot-toast';
 import { HiStar, HiEye, HiTag, HiCalendar, HiArrowLeft } from 'react-icons/hi';
+import AdSense from '@/components/AdSense';
 import { FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 
 export default function ProjectDetailPage() {
@@ -223,8 +224,10 @@ export default function ProjectDetailPage() {
               </div>
             </Link>
           )}
+          <AdSense position="project_sidebar" />
         </div>
       </div>
+      <AdSense position="project_bottom" className="max-w-4xl mx-auto mt-8" />
     </div>
   );
 }

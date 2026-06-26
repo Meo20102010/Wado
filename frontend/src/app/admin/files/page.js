@@ -61,7 +61,7 @@ export default function AdminFilesPage() {
   const presetFiles = [
     { name: 'sw.js', label: 'Service Worker', contentType: 'application/javascript', hint: 'PWA için service worker dosyası' },
     { name: 'ads.txt', label: 'ads.txt', contentType: 'text/plain', hint: 'Reklam doğrulama dosyası' },
-    { name: 'monetag-verification.txt', label: 'Monetag Doğrulama', contentType: 'text/plain', hint: 'Monetag site doğrulama dosyası' },
+    { name: 'google-adsense-verify.txt', label: 'AdSense Doğrulama', contentType: 'text/plain', hint: 'Google AdSense site doğrulama dosyası' },
   ];
 
   return (

@@ -4,6 +4,8 @@ import { SocketProvider } from '@/context/SocketContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from 'react-hot-toast';
+import Script from 'next/script';
+import AdSenseScript from '@/components/AdSenseScript';
 
 export const metadata = {
   title: 'Wado - APK, EXE ve Yazılım Dünyası',
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
               {children}
             </main>
             <Footer />
+            <AdSenseScript />
           </SocketProvider>
         </AuthProvider>
       </body>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiDownload, HiUsers, HiCube, HiTrendingUp, HiArrowRight, HiStar, HiEye } from 'react-icons/hi';
 import { projectsAPI } from '@/lib/api';
+import AdSense from '@/components/AdSense';
 
 export default function HomePage() {
   const [stats, setStats] = useState({ projects: 0, users: 0, downloads: 0, sales: 0 });
@@ -65,6 +66,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AdSense position="home_top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -140,6 +143,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <AdSense position="home_mid" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-20">
         <div className="glass-card p-8 md:p-12 text-center">

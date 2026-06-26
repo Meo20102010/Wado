@@ -263,3 +263,33 @@ exports.deleteRootFile = async (req, res) => {
     res.status(500).json({ message: 'Sunucu hatası' });
   }
 };
+
+exports.getAdSense = async (req, res) => {
+  try {
+    const result = await query('SELECT * FROM adsense_settings LIMIT 1');
+    res.json({ adsense: result.rows[0] || { client_id: '', ad_code: '', position: 'home_top', is_active: false } });
+  } catch (error) {
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};
+
+exports.updateAdSense = async (req, res) => {
+  try {
+    const { client_id, ad_code, position, is_active } = req.body;
+    const existing = await query('SELECT id FROM adsense_settings LIMIT 1');
+    if (existing.rows.length > 0) {
+      await query(
+        'UPDATE adsense_settings SET client_id = $1, ad_code = $2, position = $3, is_active = $4, updated_at = NOW() WHERE id = $5',
+        [client_id || '', ad_code || '', position || 'home_top', is_active === true, existing.rows[0].id]
+      );
+    } else {
+      await query(
+        'INSERT INTO adsense_settings (client_id, ad_code, position, is_active) VALUES ($1, $2, $3, $4)',
+        [client_id || '', ad_code || '', position || 'home_top', is_active === true]
+      );
+    }
+    res.json({ message: 'AdSense ayarları güncellendi' });
+  } catch (error) {
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};

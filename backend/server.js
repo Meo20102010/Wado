@@ -42,6 +42,7 @@ const chatRoutes = require('./src/routes/chat');
 const adminRoutes = require('./src/routes/admin');
 const notificationRoutes = require('./src/routes/notifications');
 const rootFileRoutes = require('./src/routes/rootFiles');
+const adsenseRoutes = require('./src/routes/adsense');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
@@ -50,6 +51,7 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/root-files', rootFileRoutes);
+app.use('/api/adsense', adsenseRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });

@@ -114,6 +114,12 @@ export const adminAPI = {
   getRootFiles: () => api.get('/admin/root-files'),
   createRootFile: (data) => api.post('/admin/root-files', data),
   deleteRootFile: (id) => api.delete(`/admin/root-files/${id}`),
+  getAdSense: () => api.get('/admin/adsense'),
+  updateAdSense: (data) => api.put('/admin/adsense', data),
+};
+
+export const adsenseAPI = {
+  getSettings: () => api.get('/adsense'),
 };
 
 export const notificationsAPI = {

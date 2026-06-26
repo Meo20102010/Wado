@@ -134,6 +134,16 @@ CREATE TABLE IF NOT EXISTS sales (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- AdSense settings (Google AdSense configuration)
+CREATE TABLE IF NOT EXISTS adsense_settings (
+  id SERIAL PRIMARY KEY,
+  client_id VARCHAR(100) NOT NULL DEFAULT '',
+  ad_code VARCHAR(200) NOT NULL DEFAULT '',
+  position VARCHAR(50) NOT NULL DEFAULT 'home_top',
+  is_active BOOLEAN DEFAULT false,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Root files table (served at site root: sw.js, ads.txt, etc.)
 CREATE TABLE IF NOT EXISTS root_files (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
